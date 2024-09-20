@@ -13,7 +13,7 @@ python3
 ``` 
 git clone https://github.com/cons0le7/Bet-Tester 
 cd Bet-Tester
-sudo python3 bet.py 
+python3 bet.py 
 ``` 
 
 
