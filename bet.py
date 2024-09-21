@@ -51,13 +51,15 @@ def betting_test():
         except ValueError:
             print(color_red("Invalid input. Please enter a number."))
             continue
-
+        
         current_bet = initial_bet
+        bankrupt = False
 
         for bet_number in range(num_bets):
             if balance <= 0:
+                bankrupt = True
                 print(color_red("""
-                ~!!!BANKRUPT!!!~
+                -!!!BANKRUPT!!!-
                 """))
                 break
 
@@ -90,10 +92,15 @@ def betting_test():
                 """))
             next_bal = balance 
             run = run + 1
-                
-        continue_betting = input("Do you want to place more bets? (yes/no): ").strip().lower()
-        if continue_betting != 'yes':
-            print(color_cyan(f"End balance: ${balance}"))
-            break
-
+        if bankrupt == False:          
+            continue_betting = input("Do you want to place more bets? (yes/no): ").strip().lower()
+            if continue_betting != 'yes':
+                print(color_cyan(f"End balance: ${balance}"))
+                break
+        elif bankrupt == True: 
+            print(color_red("""
+                -!!!BANKRUPT!!!-
+            """)) 
+            break 
+    
 betting_test()
