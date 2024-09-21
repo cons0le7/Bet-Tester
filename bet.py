@@ -19,8 +19,11 @@ def color_red(text):
     RED = "\033[31m"  
     RESET = "\033[0m" 
     return f"{RED}{text}{RESET}"
+    
+
 
 def betting_test():
+    run = 0
     print("""
  __   ___ ___    ___  ___  __  ___  ___  __  
 |__) |__   |      |  |__  /__`  |  |__  |__) 
@@ -69,14 +72,25 @@ def betting_test():
                 balance -= current_bet  
                 print(color_red(f"You lost! New balance: ${balance}"))
                 current_bet *= bet_per  
-
-        print(color_cyan(f""" 
-            Initial balance: ${init_balance}
-            Bet amount: ${initial_bet}
-            Number of bets: {num_bets}
-            Increase for losses {loss_per}%
-            End balance: ${balance}
-            """))
+        if run > 0: 
+            print(color_cyan(f""" 
+                Start balance: ${next_bal}
+                Bet amount: ${initial_bet}
+                Number of bets: {num_bets}
+                Increase for losses {loss_per}%
+                End balance: ${balance}
+                """))
+        else: 
+            print(color_cyan(f""" 
+                Initial balance: ${init_balance}
+                Bet amount: ${initial_bet}
+                Number of bets: {num_bets}
+                Increase for losses {loss_per}%
+                End balance: ${balance}
+                """))
+            next_bal = balance 
+            run = run + 1
+                
         continue_betting = input("Do you want to place more bets? (yes/no): ").strip().lower()
         if continue_betting != 'yes':
             print(color_cyan(f"End balance: ${balance}"))
