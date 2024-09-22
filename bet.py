@@ -76,14 +76,19 @@ def betting_test():
                 current_bet *= bet_per  
         if run > 0: 
             print(color_cyan(f""" 
-                Start balance: ${next_bal}
+                Run: {run + 1}
+                Initial balance: ${init_balance}
+                Start balance this run: ${next_bal}
                 Bet amount: ${initial_bet}
                 Number of bets: {num_bets}
                 Increase for losses {loss_per}%
                 End balance: ${balance}
                 """))
+            next_bal = balance 
+            run = run + 1
         else: 
             print(color_cyan(f""" 
+                Run: {run + 1}
                 Initial balance: ${init_balance}
                 Bet amount: ${initial_bet}
                 Number of bets: {num_bets}
