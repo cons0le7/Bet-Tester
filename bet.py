@@ -63,44 +63,44 @@ def betting_test():
                 """))
                 break
 
-            print(color_blue(f"Bet {bet_number + 1}: Current balance: ${balance}"))
-            print(color_cyan(f"Betting: ${current_bet}"))
+            print(color_blue(f"Bet {bet_number + 1}: Current balance: ${balance:.2f}"))
+            print(color_cyan(f"Betting: ${current_bet:.2f}"))
 
             if random.choice([True, False]): 
                 balance += current_bet 
-                print(color_green(f"You won! New balance: ${balance}"))
+                print(color_green(f"You won! New balance: ${balance:.2f}"))
                 current_bet = initial_bet 
             else:
                 balance -= current_bet  
-                print(color_red(f"You lost! New balance: ${balance}"))
+                print(color_red(f"You lost! New balance: ${balance:.2f}"))
                 current_bet *= bet_per  
         if run > 0: 
             print(color_cyan(f""" 
                 Run: {run + 1}
-                Initial balance: ${init_balance}
-                Start balance this run: ${next_bal}
-                Bet amount: ${initial_bet}
+                Initial balance: ${init_balance:.2f}
+                Start balance this run: ${next_bal:.2f}
+                Bet amount: ${initial_bet:.2f}
                 Number of bets: {num_bets}
                 Increase for losses {loss_per}%
-                End balance: ${balance}
+                End balance: ${balance:.2f}
                 """))
             next_bal = balance 
             run = run + 1
         else: 
             print(color_cyan(f""" 
                 Run: {run + 1}
-                Initial balance: ${init_balance}
-                Bet amount: ${initial_bet}
+                Initial balance: ${init_balance:.2f}
+                Bet amount: ${initial_bet:.2f}
                 Number of bets: {num_bets}
                 Increase for losses {loss_per}%
-                End balance: ${balance}
+                End balance: ${balance:.2f}
                 """))
             next_bal = balance 
             run = run + 1
         if bankrupt == False:          
             continue_betting = input("Do you want to place more bets? (yes/no): ").strip().lower()
             if continue_betting != 'yes':
-                print(color_cyan(f"End balance: ${balance}"))
+                print(color_cyan(f"End balance: ${balance:.2f}"))
                 break
         elif bankrupt == True: 
             print(color_red("""
