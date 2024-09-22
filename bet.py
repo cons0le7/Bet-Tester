@@ -38,7 +38,7 @@ def betting_test():
     print("Balance: $" + str(balance))
     while True:
         try:
-            initial_bet = int(input("Enter amount to bet: "))
+            initial_bet = int(input("Enter amount to bet: $"))
             if initial_bet <= 0:
                 print(color_red("Please enter a positive number."))
                 continue            
