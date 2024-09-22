@@ -20,7 +20,10 @@ def color_red(text):
     RESET = "\033[0m" 
     return f"{RED}{text}{RESET}"
     
-
+def color_purple(text): 
+    PURPLE = "\033[35m"
+    RESET = "\033[0m" 
+    return f"{PURPLE}{text}{RESET}"
 
 def betting_test():
     run = 0
@@ -75,26 +78,26 @@ def betting_test():
                 print(color_red(f"You lost! New balance: ${balance:.2f}"))
                 current_bet *= bet_per  
         if run > 0: 
-            print(color_cyan(f""" 
-                Run: {run + 1}
-                Initial balance: ${init_balance:.2f}
-                Start balance this run: ${next_bal:.2f}
-                Bet amount: ${initial_bet:.2f}
-                Number of bets: {num_bets}
-                Increase for losses {loss_per}%
-                End balance: ${balance:.2f}
-                """))
+            print(f""" 
+                {color_purple(f'Run: ')}{color_cyan(f'{run + 1}')}
+                {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
+                {color_purple(f'Start balance this run: ')}{color_cyan(f'${next_bal:.2f}')}
+                {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
+                {color_purple(f'Number of bets: ')}{color_cyan(f'{num_bets}')}
+                {color_purple(f'Increase for losses: ')}{color_cyan(f'{loss_per}%')}
+                {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
+                """)
             next_bal = balance 
             run = run + 1
         else: 
-            print(color_cyan(f""" 
-                Run: {run + 1}
-                Initial balance: ${init_balance:.2f}
-                Bet amount: ${initial_bet:.2f}
-                Number of bets: {num_bets}
-                Increase for losses {loss_per}%
-                End balance: ${balance:.2f}
-                """))
+            print(f""" 
+                {color_purple(f'Run: ')}{color_cyan(f'{run + 1}')}
+                {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
+                {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
+                {color_purple(f'Number of bets: ')}{color_cyan(f'{num_bets}')}
+                {color_purple(f'Increase for losses: ')}{color_cyan(f'{loss_per}%')}
+                {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
+                """)
             next_bal = balance 
             run = run + 1
         if bankrupt == False:          
