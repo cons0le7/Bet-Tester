@@ -46,14 +46,11 @@ def betting_test():
             if num_bets <= 0:
                 print(color_red("Please enter a positive number."))
                 continue                
-            loss_per = int(input("Enter % to increase bet by if lost: "))
+            loss_per = int(input("Enter % of original bet amount to bet after losses. \n(100 = same amount, 50 = half, 200 = double): "))
             if loss_per <= 0:
                 print(color_red("Please enter a positive number."))
                 continue            
-            if loss_per < 100:
-                bet_per = float("1." + str(loss_per))
-            else: 
-                bet_per = loss_per / 100
+            bet_per = loss_per / 100
         except ValueError:
             print(color_red("Invalid input. Please enter a number."))
             continue
