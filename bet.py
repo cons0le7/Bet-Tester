@@ -90,11 +90,11 @@ def betting_test():
                 """)
             if difference > 0: 
                 print(f"""
-                {color_purple(f'            Gain this run ($): +')}{color_green(f'{difference:.2f}')}
+                {color_purple(f'Gain this run ($): +')}{color_green(f'{difference:.2f}')}
                 """)
             else: 
                 print(f"""
-                {color_purple(f'            Loss this run ($): ')}{color_red(f'{difference:.2f}')}
+                {color_purple(f'Loss this run ($): ')}{color_red(f'{difference:.2f}')}
                 """)
 
             next_bal = balance
@@ -111,11 +111,11 @@ def betting_test():
                 """)
             if difference > 0: 
                 print(f"""
-                {color_purple(f'            Gain this run ($): +')}{color_green(f'{difference:.2f}')}
+                {color_purple(f'Gain this run ($): +')}{color_green(f'{difference:.2f}')}
                 """)
             else: 
                 print(f"""
-                {color_purple(f'            Loss this run ($): ')}{color_red(f'{difference:.2f}')}
+                {color_purple(f'Loss this run ($): ')}{color_red(f'{difference:.2f}')}
                 """)
             next_bal = balance
             run = run + 1
