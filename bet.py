@@ -35,7 +35,7 @@ def betting_test():
     """))
     balance = int(input(f"{color_purple('Enter starting balance: ')}$"))
     init_balance = balance
-    print("Balance: $" + str(balance))
+    print(f"{color_purple('Balance: ')}{color_cyan(f'${balance}')}")
     while True:
         try:
             initial_bet = int(input(f"{color_purple('Enter amount to bet: ')}$"))
