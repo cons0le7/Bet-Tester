@@ -66,8 +66,7 @@ def betting_test():
                 """))
                 break
 
-            print(color_blue(f"Bet {bet_number + 1}: Current balance: ${balance:.2f}"))
-            print(color_cyan(f"Betting: ${current_bet:.2f}"))
+            print(f"{color_blue(f'Bet {bet_number + 1}:')}{color_cyan(f' ${current_bet:.2f}')}")
 
             if random.choice([True, False]): 
                 balance += current_bet 
