@@ -90,7 +90,7 @@ def betting_test():
                 """)
             if difference > 0: 
                 print(f"""
-                {color_purple(f'Gain this run ($): +')}{color_green(f'{difference:.2f}')}
+                {color_purple(f'Gain this run ($): ')}{color_green(f'+{difference:.2f}')}
                 
                 """)
             else: 
@@ -113,7 +113,7 @@ def betting_test():
                 """)
             if difference > 0: 
                 print(f"""
-                {color_purple(f'Gain this run ($): +')}{color_green(f'{difference:.2f}')}
+                {color_purple(f'Gain this run ($): ')}{color_green(f'+{difference:.2f}')}
                 
                 """)
             else: 
