@@ -78,6 +78,7 @@ def betting_test():
                 print(color_red(f"You lost! New balance: ${balance:.2f}"))
                 current_bet *= bet_per  
         if run > 0: 
+            difference = balance - next_bal
             print(f""" 
                 {color_purple(f'Run: ')}{color_cyan(f'{run + 1}')}
                 {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
@@ -87,17 +88,27 @@ def betting_test():
                 {color_purple(f'% applied after lost bets: ')}{color_cyan(f'{loss_per}%')}
                 {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
                 """)
+            if difference > 0: 
+                print(f"{color_purple(f'Gain this run ($): +')}{color_green(f'{difference:.2f}')}")
+            else: 
+                print(f"{color_purple(f'Loss this run ($): ')}{color_red(f'{difference:.2f}')}")
+
             next_bal = balance
             run = run + 1
         else: 
+            difference = balance - init_balance
             print(f""" 
                 {color_purple(f'Run: ')}{color_cyan(f'{run + 1}')}
                 {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
                 {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
                 {color_purple(f'Number of bets: ')}{color_cyan(f'{bet_number + 1}')}
                 {color_purple(f'% applied after lost bets: ')}{color_cyan(f'{loss_per}%')}
-                {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
+                {color_purple(f'End balance ($): ')}{color_cyan(f'{balance:.2f}')}
                 """)
+            if difference > 0: 
+                print(f"{color_purple(f'Gain this run ($): +')}{color_green(f'{difference:.2f}')}")
+            else: 
+                print(f"{color_purple(f'Loss this run ($): ')}{color_red(f'{difference:.2f}')}")
             next_bal = balance
             run = run + 1
         if bankrupt == False:          
@@ -105,9 +116,9 @@ def betting_test():
             if continue_betting != 'yes':
                 net = balance - start_bal
                 if net > 0: 
-                    print(f"                {color_purple(f'Net gain ($): ')}{color_cyan(f'+{net:.2f}')}")
+                    print(f"                {color_purple(f'Net gain ($): ')}{color_green(f'+{net:.2f}')}")
                 else: 
-                    print(f"                {color_purple(f'Net loss ($): ')}{color_cyan(f'{net:.2f}')}")
+                    print(f"                {color_purple(f'Net loss ($): ')}{color_red(f'{net:.2f}')}")
                 break
         elif bankrupt == True: 
             print(color_red("""
