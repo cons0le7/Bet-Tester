@@ -27,26 +27,26 @@ def color_purple(text):
 
 def betting_test():
     run = 0
-    print("""
+    print(color_cyan("""
  __   ___ ___    ___  ___  __  ___  ___  __  
 |__) |__   |      |  |__  /__`  |  |__  |__) 
 |__) |___  |      |  |___ .__/  |  |___ |  \ 
                                              
-    """)
-    balance = int(input("Enter starting balance: $"))
+    """))
+    balance = int(input(f"{color_purple('Enter starting balance: ')}$"))
     init_balance = balance
     print("Balance: $" + str(balance))
     while True:
         try:
-            initial_bet = int(input("Enter amount to bet: $"))
+            initial_bet = int(input(f"{color_purple('Enter amount to bet: ')}$"))
             if initial_bet <= 0:
                 print(color_red("Please enter a positive number."))
                 continue            
-            num_bets = int(input("Enter the number of bets you want to place: "))
+            num_bets = int(input(f"{color_purple('Enter the number of bets you want to place:')} "))
             if num_bets <= 0:
                 print(color_red("Please enter a positive number."))
                 continue                
-            loss_per = int(input("Enter % of original bet amount to bet after losses. \n(100 = same amount, 50 = half, 200 = double): "))
+            loss_per = int(input(f"{color_purple('Enter % of original bet amount to bet after losses.')}\n{color_red('(100 = same amount, 50 = half, 200 = double):')} "))
             if loss_per <= 0:
                 print(color_red("Please enter a positive number."))
                 continue            
