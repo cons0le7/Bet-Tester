@@ -108,7 +108,7 @@ def betting_test():
                     print(f"                {color_purple(f'Net gain ($): ')}{color_cyan(f'+{net:.2f}')}")
                 else: 
                     print(f"                {color_purple(f'Net loss ($): ')}{color_cyan(f'{net:.2f}')}")
-                    break
+                break
         elif bankrupt == True: 
             print(color_red("""
                 -!!!BANKRUPT!!!-
