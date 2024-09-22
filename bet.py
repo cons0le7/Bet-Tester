@@ -102,7 +102,7 @@ def betting_test():
         if bankrupt == False:          
             continue_betting = input("Do you want to place more bets? (yes/no): ").strip().lower()
             if continue_betting != 'yes':
-                print(f"    {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}")
+                print(f"                {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}")
                 break
         elif bankrupt == True: 
             print(color_red("""
