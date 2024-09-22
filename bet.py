@@ -83,7 +83,7 @@ def betting_test():
                 {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
                 {color_purple(f'Start balance this run: ')}{color_cyan(f'${next_bal:.2f}')}
                 {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
-                {color_purple(f'Number of bets: ')}{color_cyan(f'{bet_number + 1}')}
+                {color_purple(f'Number of bets: ')}{color_cyan(f'{bet_number}')}
                 {color_purple(f'% applied after lost bets: ')}{color_cyan(f'{loss_per}%')}
                 {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
                 """)
@@ -94,7 +94,7 @@ def betting_test():
                 {color_purple(f'Run: ')}{color_cyan(f'{run + 1}')}
                 {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
                 {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
-                {color_purple(f'Number of bets: ')}{color_cyan(f'{bet_number + 1}')}
+                {color_purple(f'Number of bets: ')}{color_cyan(f'{bet_number}')}
                 {color_purple(f'% applied after lost bets: ')}{color_cyan(f'{loss_per}%')}
                 {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
                 """)
