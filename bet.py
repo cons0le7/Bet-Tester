@@ -55,6 +55,7 @@ def betting_test():
             print(color_red("Invalid input. Please enter a number."))
             continue
         
+        start_bal = balance
         current_bet = initial_bet
         bankrupt = False
 
@@ -83,10 +84,10 @@ def betting_test():
                 {color_purple(f'Start balance this run: ')}{color_cyan(f'${next_bal:.2f}')}
                 {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
                 {color_purple(f'Number of bets: ')}{color_cyan(f'{num_bets}')}
-                {color_purple(f'Increase for losses: ')}{color_cyan(f'{loss_per}%')}
+                {color_purple(f'% applied after lost bets: ')}{color_cyan(f'{loss_per}%')}
                 {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
                 """)
-            next_bal = balance 
+            next_bal = balance
             run = run + 1
         else: 
             print(f""" 
@@ -94,16 +95,20 @@ def betting_test():
                 {color_purple(f'Initial balance: ')}{color_cyan(f'${init_balance:.2f}')}
                 {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
                 {color_purple(f'Number of bets: ')}{color_cyan(f'{num_bets}')}
-                {color_purple(f'Increase for losses: ')}{color_cyan(f'{loss_per}%')}
+                {color_purple(f'% applied after lost bets: ')}{color_cyan(f'{loss_per}%')}
                 {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
                 """)
-            next_bal = balance 
+            next_bal = balance
             run = run + 1
         if bankrupt == False:          
             continue_betting = input("Do you want to place more bets? (yes/no): ").strip().lower()
             if continue_betting != 'yes':
-                print(f"                {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}")
-                break
+                net = balance - start_bal
+                if net > 0: 
+                    print(f"                {color_purple(f'Net gain ($): ')}{color_cyan(f'+{net:.2f}')}")
+                else: 
+                    print(f"                {color_purple(f'Net loss ($): ')}{color_cyan(f'{net:.2f}')}")
+                    break
         elif bankrupt == True: 
             print(color_red("""
                 -!!!BANKRUPT!!!-
