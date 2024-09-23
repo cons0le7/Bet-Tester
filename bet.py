@@ -86,7 +86,7 @@ def betting_test():
                 {color_purple(f'Bet amount: ')}{color_cyan(f'${initial_bet:.2f}')}
                 {color_purple(f'Number of bets: ')}{color_cyan(f'{bet_number + 1}')}
                 {color_purple(f'% applied to bets after loss: ')}{color_cyan(f'{loss_per}%')}
-                {color_purple(f'End balance: ')}{color_cyan(f'${balance:.2f}')}
+                {color_purple(f'End balance ($): ')}{color_cyan(f'{balance:.2f}')}
                 """)
             if difference > 0: 
                 print(f"""
