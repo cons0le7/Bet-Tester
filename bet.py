@@ -93,11 +93,15 @@ def betting_test():
                 {color_purple(f'Gain this run ($): ')}{color_green(f'+{difference:.2f}')}
                 
                 """)
-            else: 
+            elif difference < 0: 
                 print(f"""
                 {color_purple(f'Loss this run ($): ')}{color_red(f'{difference:.2f}')}
                 
                 """)
+            else: 
+                print(color_cyan("""
+                - IT'S A WASH! -
+                """))
 
             next_bal = balance
             run = run + 1
