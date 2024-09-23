@@ -35,6 +35,7 @@ def betting_test():
     """))
     balance = int(input(f"{color_cyan('Enter starting balance: ')}$"))
     init_balance = balance
+    start_bal = balance
     print(f"{color_cyan('Balance: ')}{color_green(f'${balance}')}")
     while True:
         try:
@@ -55,7 +56,6 @@ def betting_test():
             print(color_red("Invalid input. Please enter a number."))
             continue
         
-        start_bal = balance
         current_bet = initial_bet
         bankrupt = False
 
