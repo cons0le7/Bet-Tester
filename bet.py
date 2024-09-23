@@ -133,12 +133,12 @@ def betting_test():
                 if balance > start_bal:
                     net_gain = balance - start_bal
                     print(f"""
-                    {color_purple(f'Total gain ($): ')}{color_green(f'+{net_gain:.2f}')}
+                {color_purple(f'Total gain ($): ')}{color_green(f'+{net_gain:.2f}')}
                     """)
                 elif balance < start_bal: 
                     net_loss = balance - start_bal 
                     print(f"""
-                    {color_purple(f'Total loss ($): ')}{color_red(f'{net_loss:.2f}')}
+                {color_purple(f'Total loss ($): ')}{color_red(f'{net_loss:.2f}')}
                     """)
                 else: 
                     print(color_cyan("""
